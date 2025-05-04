@@ -1,0 +1,11 @@
+### Reflection:
+During Part A of the practical, I learned how REST APIs facilitate communication between clients and servers using HTTP methods.
+I gained a better understanding of how to implement CRUD operations using GET, POST, PUT, and DELETE methods.
+One challenge I faced was ensuring proper error handling and returning appropriate status codes for different scenarios.
+
+### Q&A:
+1. **Why use POST for creating resources and PUT for updating?**  
+   POST is used for creating resources because it allows the server to generate a unique identifier for the new resource. PUT is used for updating because it replaces the entire resource at the specified URI, ensuring idempotency.
+
+2. **What status code should be returned when attempting to update a non-existent resource?**  
+   The status code `404 Not Found` should be returned when attempting to update a resource that does not exist.

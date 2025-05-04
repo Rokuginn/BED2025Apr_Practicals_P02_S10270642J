@@ -1,0 +1,47 @@
+Report
+
+1. app.use(express.json()):
+   This middleware parses incoming JSON payloads in the request body and makes them accessible via `req.body`. Without it, the server cannot handle JSON data sent by the client.
+
+2. req.body:
+   This object contains the data sent by the client in the body of the request, typically used in POST and PUT requests to create or update resources.
+
+3. req.query:
+   This object holds query parameters sent in the URL after the `?`. For example, in `/foods?name=apple`, `req.query.name` would be `"apple"`. It is used for filtering or searching.
+
+4. req.params.id:
+   This retrieves the `id` parameter from the URL path. For example, in `/foods/123`, `req.params.id` would be `123`. It is used to identify specific resources.
+
+
+ HTTP Methods and CRUD Operations:
+
+1. GET:
+   Used to retrieve data. In CRUD, it corresponds to "Read". Example: Fetching all foods or a specific food.
+
+2. POST:
+   Used to create new resources. In CRUD, it corresponds to "Create". Example: Adding a new food item.
+
+3. PUT:
+   Used to update existing resources. In CRUD, it corresponds to "Update". Example: Modifying the name or calories of a food item.
+
+4. DELETE:
+   Used to remove resources. In CRUD, it corresponds to "Delete". Example: Deleting a food item by its ID.
+
+
+
+HTTP Status Codes:
+
+1. 200 OK:
+   Indicates that the request was successful, and the server returned the expected response.
+
+2. 201 Created:
+   Indicates that a new resource was successfully created on the server.
+
+3. 400 Bad Request:
+   Indicates that the server could not process the request due to client-side errors, such as invalid input.
+
+4. 404 Not Found:
+   Indicates that the requested resource could not be found on the server.
+
+5. 500 Internal Server Error:
+   Indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.
