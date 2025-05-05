@@ -1,0 +1,6 @@
+### Reflection:
+
+During Part A: Lab Activity, I learned the importance of separating database logic from route handlers to improve code readability and maintainability.
+When all logic is embedded directly in the route handlers, it becomes harder to understand and debug, especially as the application grows.
+If a bug were to occur in how books are created in the database,
+having the database logic in separate functions would make it significantly easier to isolate and fix the issue. One challenge I faced was ensuring proper error handling and managing database connections efficiently to avoid resource leaks.
