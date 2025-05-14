@@ -1,0 +1,19 @@
+### Reflection on Refactoring to MVC Architecture
+
+Main Changes Made:
+To refactor the API into the MVC architecture, I separated the code into three main layers: Models, Views (not used for APIs), and Controllers. The database logic was moved from `app.js` into the `models/bookModel.js` file, which now handles all direct interactions with the database. The route handling logic was moved into `controllers/bookController.js`, which calls the model functions and manages the HTTP responses. The route definitions and middleware setup remain in `app.js`, which now simply connects routes to their respective controller functions and applies validation middleware from `middlewares/bookValidation.js`.
+
+Challenges Faced:
+One challenge was ensuring that each layer only handled its specific responsibility, especially when moving code that mixed database access and HTTP response logic. Another challenge was managing module imports and exports correctly so that each part of the application could access the functions it needed. Debugging issues related to asynchronous code and database connections also became more complex during the transition.
+
+How MVC Changes Feature Development:
+With MVC, adding new features or modifying existing ones becomes more systematic. For example, to add a new endpoint, I now create or update a controller function, possibly add a new model function, and simply wire up the route in `app.js`. This separation makes it easier to locate and update code related to a specific concern, rather than searching through a large, monolithic `app.js` file.
+
+Organization and Maintainability:
+The MVC version is more organized because each file has a clear purpose: models for data access, controllers for request handling, and middleware for validation. This structure makes the codebase easier to understand, especially for new developers. It also improves maintainability, as changes in one layer (like updating database queries) do not directly affect the others.
+
+Benefits of Separating Concerns:
+By putting database logic in the Model and request handling in the Controller, the code becomes more modular and testable. It is easier to write unit tests for each layer, and bugs can be isolated more quickly. This separation also encourages reusability and reduces code duplication.
+
+
+
