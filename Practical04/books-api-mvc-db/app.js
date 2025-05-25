@@ -1,8 +1,10 @@
 const express = require("express");
 const sql = require("mssql");
 const dotenv = require("dotenv");
+const path = require("path");
 // Load environment variables
 dotenv.config();
+
 
 const bookController = require("./controllers/bookController");
 const {
@@ -19,6 +21,14 @@ app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 // --- Add other general middleware here (e.g., logging, security headers) ---
 
+// Middleware to serve static files (if needed)
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Ensure extended is true for urlencoded
+
+// --- Serve static files from the 'public' directory ---
+// When a request comes in for a static file (like /index.html, /styles.css, /script.js),
+// Express will look for it in the 'public' folder relative to the project root.
+app.use(express.static(path.join(__dirname, "public")));
 // Routes for books
 // Apply middleware *before* the controller function for routes that need it
 app.get("/books", bookController.getAllBooks);

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Student</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Create New Student</h1>
+    <p><a href="students.html">Back to Students List</a></p>
+
+    <form id="createStudentForm">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="course">Course:</label>
+            <input type="text" id="course" name="course" required>
+        </div>
+        <button type="submit">Create Student</button>
+    </form>
+
+    <div id="message"></div>
+    <script src="create-script.js"></script>
+</body>
+</html>
