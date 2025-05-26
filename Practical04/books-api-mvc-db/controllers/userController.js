@@ -94,7 +94,7 @@ async function searchUsers(req, res) {
 
 async function getUsersWithBooks(req, res) {
   try {
-    const users = await User.getUsersWithBooks();
+    const users = await userModel.getUsersWithBooks(); // Change User to userModel
     res.json(users);
   } catch (error) {
     console.error("Controller error in getUsersWithBooks:", error);

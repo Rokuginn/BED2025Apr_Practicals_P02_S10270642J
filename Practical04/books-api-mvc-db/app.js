@@ -38,9 +38,10 @@ app.post("/books", validateBook, bookController.createBook); // Use validateBook
 // Add routes for PUT/DELETE if implemented, applying appropriate middleware
 
 // --- User Routes ---
+// --- User Routes ---
 app.get("/users", userController.getAllUsers);
-app.get("/users/:id", userController.getUserById);
-app.get("/users/search", userController.searchUsers); // Search users by username or email")
+app.get("/users/search", userController.searchUsers); // Specific route comes before parameterized route
+app.get("/users/:id", userController.getUserById);    // Parameterized route comes last
 app.post("/users", userController.createUser);
 app.put("/users/:id", userController.updateUser);
 app.delete("/users/:id", userController.deleteUser);
